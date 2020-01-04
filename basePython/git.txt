@@ -1,0 +1,42 @@
+Git的基本用法：
+   1. 创建标准仓库，在项目跟目标下创建一个隐藏的.git 文件夹
+   git init <project name>
+   2.创建一个裸仓库，其只有.git 目录内容 而没有仓库工作区域 一般用于共享服务器上的创建
+   git init --bare <project name>
+   3.显示当前的配置信息
+   git config --list
+   4.显示系统级别Git配置信息
+   git config --system --list
+   5.显示项目配置文件
+   cat .git/config
+   6.显示用户级别信息
+   cat ～/.gitconfig
+   7.配置用户名和用户邮箱
+   git config --global user.name "用户名"
+   git config --global user.email "用户邮箱"
+   8.克隆仓库  注意：Git 支持url协议 HTTP协议 SSH
+   git clone <url>
+   9.查看文件状态
+   git status
+   10.添加文件追踪，将app添加到index文件中
+   git add app/
+   11.提交代码,提交到版本库，写入提交信息
+   git commit -m "add app folder"
+   12.查看远程仓库
+   git remote -v
+   13.添加远程仓库 为本地版本库添加一个远程仓库
+   git remote add origin <url>
+   14.推送仓库,将本地master分支提交到别名为origin的远程仓库
+   git push origin master
+   15.从远程仓库更新代码到本地,fetch 不会合并分支的代码，需要比较差异后合并,将origin/master分支合并到master
+   git fetch origin master
+   git merge origin/master
+   16.版本标记
+   git tag -n [数字]
+   17.显示对应标签版本的信息和提交差异
+   git show
+   18.添加忽略文件
+   19.查看分支
+   git branch
+   20.合并分支
+   git merge <branch_name>
